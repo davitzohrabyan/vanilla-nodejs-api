@@ -1,0 +1,21 @@
+{
+  "name": "sceon_task",
+  "version": "1.0.0",
+  "description": "Sceon Node.js task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.5.0"
+  },
+  "keywords": [
+    "Sceon",
+    "node",
+    "Davit"
+  ],
+  "author": "Davit Zohrabyan",
+  "license": "ISC"
+}
