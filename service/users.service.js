@@ -53,7 +53,15 @@ const createUser = (req, res, next) => {
   try {
     const { first_name, last_name, email, password } = JSON.parse(req.body);
 
-    const userId = crypto.randomUUID();
+    let userId;
+    try {
+      userId = crypto.randomUUID();
+    } catch (err) {
+      // for older node versions alternative unique id creator
+      const prefix = Date.now().toString(36);
+      const suffix = Math.floor(100000000 + Math.random() * 900000000).toString(36);
+      userId = (prefix + suffix).toLowerCase();
+    }
     const hashedPassword = createHash(password, userId);
 
     const user = create({

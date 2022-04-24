@@ -62,7 +62,7 @@ class App {
         route.pattern.test(req.urlParams.pathname)
       );
 
-      req.middlewares = req.route?.[req.method];
+      req.middlewares = req.route && req.route[req.method];
       if (!req.middlewares) {
         return next(new ResourceNotFoundError("Route not found"));
       }
